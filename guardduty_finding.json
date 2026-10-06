@@ -1,0 +1,36 @@
+{
+  "version": "0",
+  "id": "c8c4daa7-a20c-2f03-0070-b7393dd542ad",
+  "detail-type": "GuardDuty Finding",
+  "source": "aws.guardduty",
+  "account": "123456789012",
+  "time": "2026-09-29T14:02:11Z",
+  "region": "us-east-1",
+  "resources": [],
+  "detail": {
+    "schemaVersion": "2.0",
+    "accountId": "123456789012",
+    "region": "us-east-1",
+    "id": "a2b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2",
+    "type": "Backdoor:EC2/C&CActivity.B!DNS",
+    "title": "EC2 instance is querying a domain associated with a known command and control server.",
+    "severity": 8,
+    "resource": {
+      "resourceType": "Instance",
+      "instanceDetails": {
+        "instanceId": "REPLACED_AT_RUNTIME",
+        "instanceType": "t3.medium",
+        "tags": [{"key": "Name", "value": "web-prod-02"}]
+      }
+    },
+    "service": {
+      "action": {
+        "actionType": "DNS_REQUEST",
+        "dnsRequestAction": {"domain": "c2.badactor-infra.xyz", "protocol": "UDP", "blocked": false}
+      },
+      "count": 14,
+      "eventFirstSeen": "2026-09-29T13:51:40Z",
+      "eventLastSeen": "2026-09-29T14:01:58Z"
+    }
+  }
+}
